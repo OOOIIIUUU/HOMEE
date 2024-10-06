@@ -14,10 +14,23 @@
 
         body {
             background-color: #F8F8F8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        }
+
+        /* شاشة التحميل */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFbXkmw_s3oMptmBr9LxCg162cyeZ1NVgeJYuyJUjF1tgqAWSvyWlPo67cbE6d1K1jAKtqk-veazS-M0myYkUAdkiFcSi1gSXEnYYYSONXXhb3Q5Ir85LKDVL-Ik_kbaemty7wa1HvuHs3-YCtTtb8HzUGfskR5vJo2mAgqkkgKyP0CY-y9pxW1MUD/s2436/Background_Image.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 9999;
+        }
+
+        .hidden {
+            display: none;
         }
 
         .container {
@@ -28,6 +41,7 @@
             width: 90%;
             max-width: 400px;
             margin: 20px auto;
+            display: none; /* إخفاء محتوى الصفحة في البداية */
         }
 
         .back-button {
@@ -141,43 +155,5 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="back-button">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhI5_sXxkpeRPOfCC5IoM313W9gSI1I30rXLpLG2zaE_s8j5P3QbNsLsOQE-ID1am2JdumqU4plK__NkhtdwgNLhdFPaoRJSfbWn3FlTh-QBEGtxKgSGT_n08fIxqr9lxXPFCf82ZguYjy1VgEmXwWRS8QsiSN0pOJAwkDvV2PlugV278Ao3vIpnB8/s40/icon-left.png" alt="Back">
-        <span>Register</span>
-    </div>
-    
-    <h1>Create account</h1>
-    <p>Welcome!</p>
-    
-    <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="name" required>
-
-        <label for="phone">Phone number</label>
-        <input type="tel" id="phone" placeholder="Please enter the phone number" required>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="New password" required>
-
-        <label for="confirm-password">Confirm password</label>
-        <input type="password" id="confirm-password" placeholder="Confirm new password" required>
-
-        <label for="invite-code">Invite Code</label>
-        <input type="text" id="invite-code" placeholder="Invitation code" required>
-
-        <div class="checkbox-container">
-            <input type="checkbox" id="terms" required>
-            <label for="terms">Agree To Terms Of Service</label>
-        </div>
-
-        <button type="submit">Register</button>
-
-        <div class="login-prompt">
-            <p>Already Have An Account? <a href="login.html" class="login-link">Please Log In</a></p>
-        </div>
-    </form>
-</div>
-
-</body>
-</html>
+<!-- شاشة التحميل -->
+<div class="splash-screen" id="splash"></div>
